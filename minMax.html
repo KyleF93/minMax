@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+  alert("You will now be prompted for 10 numbers to populate the array, one at a time. Clicking cancel will add a 0 to the array");
+  //initialize array of size 10
+  const array = new Array(10);
+
+  //prompt user for 10 numbers, 1 at a time, adding them to the array in order they are entered
+  for (let i = 0; i < array.length; i++) {
+    const input = prompt('Enter number ' + (i + 1) + ' of ' + (array.length));
+    array[i] = Number(input);
+  }
+  //print the array the user has entered to the page
+  document.write("The array you entered is " + array + "<br />");
+
+  //function to compare each element
+  const findMinMax = function (a) {
+    //max = index 0
+    let max = a[0];
+    //min = index 0
+    let min = a[0];
+
+    //loop through array comparing each element to max and min values then changing if needed
+    for (let i = 0; i < array.length; i++) {
+      if (a[i] > max) {
+        max = a[i];
+      } else if (a[i] < min) {
+        min = a[i];
+      }
+    }
+    //print values to screen
+    document.write("The largest number in the array is " + max + "<br />");
+    document.write("The smallest number in the array is " + min);
+  };
+
+  findMinMax(array);
+</script>
+
+  </body>
+</html>
